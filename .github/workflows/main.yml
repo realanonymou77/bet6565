@@ -13,5 +13,5 @@ jobs:
       with:
         server: 45.132.157.183
         username: u486823999
-        password: ${{ secrets.ftp_password }}
+        password: Gollum1997882#
         server-directory: public_html/
