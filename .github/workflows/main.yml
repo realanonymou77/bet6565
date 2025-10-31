@@ -1,7 +1,4 @@
-on: 
-  push:
-    branches:
-      - master
+on: push
 name: 🚀 Deploy website on push
 jobs:
   web-deploy:
@@ -9,12 +6,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: 🚚 Get latest code
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
     
     - name: 📂 Sync files
-      uses: Penguibird/FTP-Deploy-Action@4.2.0
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.6
       with:
-        server: ftp://45.132.157.183
+        server: 45.132.157.183
         username: u486823999
-        password: Gollum1997882#
+        password: ${{ secrets.ftp_password }}
         server-directory: public_html/
